@@ -1,18 +1,28 @@
+
 import pytest
 from Pages.Signin_page import SigninPage
+from my_utilities.read_config import ReadConfig
+from my_utilities.logger import custom_logger
+
+log = custom_logger()
+
 
 def test_sign_in(setup):
     driver = setup
-    driver.get("http://www.automationpractice.pl/index.php?controller=authentication&back=my-account")
+    log.info("Opening Signin page")
+    driver.get(ReadConfig.get_base_url())
 
-    login = SigninPage(driver)
-    login.enter_email("mahi.mk476@gmail.com")
-    login.enter_password("mahi@12345")
-    login.click_sign_in()
+    Signin = SigninPage(driver)
+    log.info("Entering credentials")
+    Signin.enter_email(ReadConfig.get_email())
+    Signin.enter_password(ReadConfig.get_password())
+    Signin.click_sign_in()
 
-    account_name = login.get_account_name()
-    print("Logged in as:", account_name)
+    account_name = Signin.get_account_name()
+    log.info(f"Logged in as: {account_name}")
 
-    # You can assert your expected username here (optional)
-    assert account_name != ""
+    assert account_name == "Mahi kumawat"
+
+
+
 

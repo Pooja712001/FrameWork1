@@ -26,6 +26,24 @@ def test_contact_us(setup):
 
 
 
+import pytest
+from Pages.Contact_page import ContactPage
+from my_utilities.logger import custom_logger
+
+log = custom_logger()
+
+
+def test_contact_us(setup):
+    driver = setup
+    log.info("Opening contact us page")
+    driver.get("http://www.automationpractice.pl/index.php?controller=contact")
+
+    contact = ContactPage(driver)
+    contact.select_subject(1)
+    contact.enter_email("mahi.mk476@gmail.com")
+    contact.enter_message("This is a test message.")
+    contact.send_message()
+    log.info("Message sent successfully")
 
 
 
@@ -37,5 +55,3 @@ def test_contact_us(setup):
 
 
 
-    # success_text = driver.find_element("css selector", ".alert-success").text
-    # assert "successfully" in success_text.lower()

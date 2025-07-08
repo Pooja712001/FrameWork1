@@ -1,0 +1,11 @@
+2025-06-26 22:23:27,977 - INFO - Opening contact us page
+2025-06-26 22:23:39,963 - INFO - Message sent successfully
+2025-06-26 22:23:44,738 - INFO - Opening homepage
+2025-06-26 22:23:52,087 - INFO - Search completed
+2025-06-26 22:23:56,532 - INFO - Opening Signin page
+2025-06-26 22:24:01,144 - INFO - Entering credentials
+2025-06-26 22:24:02,885 - INFO - Logged in as: Mahi kumawat
+2025-06-26 22:24:11,781 - INFO - Testing login with Email: mahi.mk476@gmail.com | Expected: PASS
+2025-06-26 22:24:13,547 - INFO - Login successful as expected.
+2025-06-26 22:24:22,384 - INFO - Testing login with Email: wrong@mail.com | Expected: FAIL
+2025-06-26 22:24:23,663 - INFO - Login failed as expected.
